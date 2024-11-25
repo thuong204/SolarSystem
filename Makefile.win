@@ -1,0 +1,28 @@
+# Project: Hemattroi2
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = hematroi2.o
+LINKOBJ  = hematroi2.o
+LIBS     = -static-libgcc -lopengl32 -lfreeglut -lglu32
+INCS     = 
+CXXINCS  = 
+BIN      = Hemattroi2.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+hematroi2.o: hematroi2.cpp
+	$(CPP) -c hematroi2.cpp -o hematroi2.o $(CXXFLAGS)
